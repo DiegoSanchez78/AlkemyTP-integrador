@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Listado de Proveedores</h1> 
+    
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>DNI</th>
+        </tr>
+        {% csrf_token %}
+        {% for proveedor in proveedores %}
+        
+        <tr>
+            <td>{{proveedor.id}}</td>
+            <td>{{proveedor.nombre}}</td>
+            <td>{{proveedor.apellido}}</td>
+            <td>{{proveedor.dni}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
