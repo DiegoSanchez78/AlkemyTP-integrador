@@ -1,20 +1,16 @@
+{% extends 'index.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% load static %} 
+{% block title %} Crear proveedor {% endblock %}
+{% block contenidonav %}
 
     <h1>Crear producto</h1>
 
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{form.as_p}}
         <input type="submit" value="Crear">
     </form>
     
-</body>
-</html>
+
+    {% endblock contenidonav %}

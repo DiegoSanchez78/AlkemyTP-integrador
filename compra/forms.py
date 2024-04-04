@@ -9,4 +9,4 @@ class CrearProveedorForm(forms.ModelForm):
 class CrearProductoForm(forms.ModelForm):
     class Meta:
         model = Producto
-        fields = ['nombre', 'precio', 'stock_actual', 'proveedor']
+        fields = ['nombre', 'precio', 'imagen', 'stock_actual', 'proveedor']

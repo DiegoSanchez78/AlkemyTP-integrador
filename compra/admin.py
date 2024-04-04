@@ -8,7 +8,7 @@ class ProveedorAdmin(admin.ModelAdmin):
     list_display_links = ('nombre' , 'apellido' , 'dni')
 
 class ProductoAdmin(admin.ModelAdmin):
-    list_display = ('nombre' , 'proveedor')
+    list_display = ('id','nombre' , 'proveedor' , 'stock_actual', 'imagen', 'precio')
     list_display_links = ('nombre' , 'proveedor')
 
 admin.site.register(Proveedor, ProveedorAdmin)

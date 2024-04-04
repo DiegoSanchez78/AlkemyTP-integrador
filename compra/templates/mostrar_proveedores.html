@@ -1,16 +1,12 @@
+{% extends 'index.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% load static %} 
+{% block title %} Crear proveedor {% endblock %}
+{% block contenidonav %}
 
     <h1>Listado de Proveedores</h1> 
     
-    <table>
+    <!-- <table>
         <tr>
             <th>ID</th>
             <th>Nombre</th>
@@ -27,6 +23,38 @@
             <td>{{proveedor.dni}}</td>
         </tr>
         {% endfor %}
-    </table>
-</body>
-</html>
+    </table> -->
+
+    <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Id:</th>
+            <th scope="col">Nombre:</th>
+            <th scope="col">Apellido:</th>
+            <th scope="col">Dni:</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <!-- <th scope="row">1</th> -->
+
+            {% csrf_token %}
+            {% for proveedor in proveedores %}
+    
+            <tr  >
+                <td >{{proveedor.id}}</td>
+                <td > {{proveedor.nombre}}</td>
+                <td > {{proveedor.apellido}}</td>
+                <td >{{proveedor.dni}}</td>
+    
+            </tr>
+            {% endfor %} 
+
+          </tr>
+        
+        </tbody>
+      </table>
+
+
+{% endblock contenidonav %}

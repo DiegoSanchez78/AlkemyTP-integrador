@@ -13,17 +13,16 @@ def mostrar_proveedores(request):
 
 
 def crear_productos(request):
-    nuevo_producto = None 
     if request.method == 'POST':
-        form = CrearProductoForm(request.POST)
+        form = CrearProductoForm(request.POST, request.FILES)  # Pass request.FILES for file uploads
         if form.is_valid():
-            nuevo_producto = form.save()
-            # Redirigir a alguna página después de crear el proveedor
-            return redirect('/mostar_productos.html')
+            form.save()
+            return redirect('mostrar_productos')  # Use the URL name instead of a hardcoded URL
     else:
         form = CrearProductoForm()
 
-    return render(request, 'crear_productos.html', {'form': form, 'productos': nuevo_producto})
+    return render(request, 'crear_productos.html', {'form': form})
+
 
 def crear_proveedor(request):
     nuevo_proveedor = None  # Inicializamos la variable fuera del bloque condicional
@@ -40,3 +39,9 @@ def crear_proveedor(request):
     return render(request, 'crear_proveedor.html', {'form': form, 'proveedor': nuevo_proveedor})
 
 #
+def eliminar_proveedor(request, pk):
+    proveedor = Proveedor.objects.get(id=pk)
+    if request.method == 'POST':
+        proveedor.delete()
+        return redirect('/mostar_proveedor.html')
+    return render(request, 'eliminar_proveedor.html', {'proveedor': proveedor})
