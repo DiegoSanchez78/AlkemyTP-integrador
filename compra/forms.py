@@ -10,3 +10,15 @@ class CrearProductoForm(forms.ModelForm):
     class Meta:
         model = Producto
         fields = ['nombre', 'precio', 'imagen', 'stock_actual', 'proveedor']
+
+class EditarProductoForm(forms.ModelForm):
+    class Meta:
+        model = Producto
+        fields = ['nombre', 'precio', 'imagen', 'stock_actual', 'proveedor']
+
+class EditarProveedorForm(forms.ModelForm):
+    class Meta:
+        model = Proveedor
+        fields = ['nombre', 'apellido', 'dni']
+
+

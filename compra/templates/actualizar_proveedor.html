@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% load static %} 
+{% block title %} Actualizar proveedor {% endblock %}
+{% block contenidonav %}
+<section id="Homepage">
+    <div class="d-flex flex-column  align-items-center fs-3 text">
+        <div class="row">
+            <div data-scrollreveal="wait 0.5s and then ease-in-out 50px" >
+                <div class="align-center">
+                    <h2 class="main-text">Modifica los datos proveedor</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div data-scrollreveal="enter from the left 500px" class="col-md-12 col-md-offset-3">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <p><input type="submit" value="Actualizar" class="btn btn-primary fs-3"></p>
+                    <a type="button" href="{% url 'proveedor' %}" class="btn btn-primary fs-3">Volver</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock contenidonav %}
