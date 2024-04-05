@@ -11,7 +11,7 @@
           <th scope="col">Id:</th>
           <th scope="col">Nombre:</th>
           <th scope="col">Precio:</th>
-          <th scope="col">Imagen:</th>
+          <!-- <th scope="col">Imagen:</th> -->
           <th scope="col">Stock:</th>
           <th scope="col">Proveedor:</th>
           <th scope="col"></th>
@@ -31,18 +31,18 @@
           <td>{{producto.id}}</td>
           <td> {{producto.nombre}}</td>
           <td>{{producto.precio}}</td>
-          <td>
+          <!-- <td>
             {% if producto.imagen %}
             <img src="{{ producto.imagen.url }}" width="30rem" height="30rem" alt="Producto Image">
             {% else %}
             No image available
             {% endif %}
-          </td>
+          </td> -->
           <td>{{producto.stock_actual}}</td>
           <td>{{producto.proveedor}}</td>
-          <td><a href="{% url 'detail' producto.id %}" class="btn btn-primary fs-3">Detalle</a></td>
-          <td><a href="{% url 'delete' producto.id %}" class="btn btn-primary fs-3">Borrar</a></td>
-          <td><a href="{% url 'update' producto.id %}" class="btn btn-primary fs-3">Modificar</a></td>
+          <td><a href="{% url 'detail' producto.id %}" class="btn btn-primary ">Detalle</a></td>
+          <td><a href="{% url 'delete' producto.id %}" class="btn btn-primary ">Borrar</a></td>
+          <td><a href="{% url 'update' producto.id %}" class="btn btn-primary ">Modificar</a></td>
           
     
     

@@ -5,16 +5,16 @@
 {% block contenidonav %}
 
 
-<h2 class="main-text">Detalles del producto</h2>
-<div class="d-flex flex-column mb-4 mt-4 align-items-center fs-3 text">
+<h1>Detalles del producto</h1>
+<div class="d-flex flex-column mb-4 mt-4 align-items-center fs-6 text">
     <p>Nombre : {{object.nombre}}</p>
     <p>Precio: {{object.precio}}</p>
-    <img src=" {{object.imagen.url}}" alt="" style=" height: 35rem;">
+    <img src=" {{object.imagen.url}}" alt="" style=" height: 10rem;">
     <p>Stock: {{object.stock_actual}}</p>
     <p>Proveedora: {{object.proveedor}}</p>
     <p>
   
-      <a type="button" href="{% url 'mostrar_productos' %}" class="btn btn-primary fs-3">Volver</a>
+      <a type="button" href="{% url 'mostrar_productos' %}" class="btn btn-primary">Volver</a>
   
     </p>
   </div>
