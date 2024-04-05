@@ -9,7 +9,7 @@ class Proveedor(models.Model):
     # cuit = models.IntegerField()
 
     def __str__(self):
-        return f'{ self.nombre} {self.apellido} (DNI: {self.dni})'
+        return f'{ self.nombre} {self.apellido}'
 
     
     class Meta:

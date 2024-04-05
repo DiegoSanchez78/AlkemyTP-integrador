@@ -4,7 +4,7 @@ from . models import Proveedor, Producto
 class CrearProveedorForm(forms.ModelForm):
     class Meta:
         model = Proveedor
-        fields = ['nombre', 'apellido', 'dni']
+        fields = ['nombre', 'apellido', 'dni',]
 
 class CrearProductoForm(forms.ModelForm):
     class Meta:
